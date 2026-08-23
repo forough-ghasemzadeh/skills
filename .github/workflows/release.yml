@@ -1,0 +1,42 @@
+name: Release plugin zip
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Determine plugin name and tag
+        id: vars
+        run: |
+          PLUGIN_NAME=$(jq -r '.name' .claude-plugin/plugin.json)
+          TAG="${GITHUB_REF_NAME}"
+          echo "plugin_name=${PLUGIN_NAME}" >> "$GITHUB_OUTPUT"
+          echo "zip_name=${PLUGIN_NAME}-${TAG}.zip" >> "$GITHUB_OUTPUT"
+
+      - name: Build zip
+        run: |
+          zip -r "${{ steps.vars.outputs.zip_name }}" . \
+            -x '.git/*' '.github/*'
+
+      - name: Upload release asset
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v3
+        with:
+          files: ${{ steps.vars.outputs.zip_name }}
+
+      - name: Upload workflow artifact
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ steps.vars.outputs.zip_name }}
+          path: ${{ steps.vars.outputs.zip_name }}
