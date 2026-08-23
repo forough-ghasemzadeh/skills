@@ -24,24 +24,39 @@
 
 ## نصب
 
-این مخزن با فرمت [Agent Skills](https://agentskills.io/specification) سازگار است و از طریق [`npx skills`](https://github.com/vercel-labs/skills) قابل نصب است:
+این مخزن با فرمت استاندارد [Agent Skills](https://agentskills.io/specification) سازگار است و هر Skill شامل یک `SKILL.md` با frontmatter معتبر است. بسته به ابزاری که استفاده می‌کنید، یکی از روش‌های زیر را انتخاب کنید.
+
+### روش ۱: در Claude.ai و Claude Desktop (توصیه‌شده)
+
+Claude.ai و Claude Desktop (پلن‌های Pro، Max، Team و Enterprise) امکان آپلود مستقیم Skills سفارشی را دارند — بدون نیاز به هیچ دانش فنی:
+
+1. پوشهٔ Skill مورد نظر را به‌صورت zip فشرده کنید، طوری که `SKILL.md` مستقیماً در ریشهٔ فایل zip قرار بگیرد (نه داخل یک پوشهٔ میانی):
+
+   ```bash
+   cd companies/private-joint-stock/resignation && zip -r ../../../private-joint-stock-resignation-skill.zip . && cd -
+   cd companies/limited-liability/resignation && zip -r ../../../limited-liability-resignation-skill.zip . && cd -
+   ```
+
+   (اگر با خط فرمان راحت نیستید، می‌توانید از یک همکار فنی بخواهید این مرحله را برایتان انجام دهد.)
+
+2. در Claude.ai یا Claude Desktop به مسیر **Settings → Capabilities → Skills** (یا Customize → Skills) بروید.
+3. روی «+ Create skill» کلیک کرده و فایل zip را آپلود کنید.
+4. در گفتگوی جدید، Skill را فعال کنید و پرسش خود را به زبان فارسی و طبیعی مطرح کنید.
+
+### روش ۲: در ChatGPT (به‌صورت دستی)
+
+ChatGPT هنوز امکان آپلود مستقیم فایل Skill را ندارد. برای استفاده در یک Custom GPT یا Project:
+
+1. محتوای فایل `SKILL.md` Skill مورد نظر (و در صورت وجود، فایل‌های داخل `references/`) را باز کنید.
+2. کل متن را در بخش Instructions مربوط به Custom GPT یا Project کپی کنید.
+
+### روش ۳: با ابزارهای برنامه‌نویسی (اختیاری، برای کاربران فنی)
+
+اگر تیم شما از ابزارهایی مانند Claude Code یا Hermes Agent استفاده می‌کند، می‌توان این Skills را با [`npx skills`](https://github.com/vercel-labs/skills) نیز نصب کرد:
 
 ```bash
-# مشاهده Skills موجود در این مخزن
-npx skills add forough-ghasemzadeh/skills --list
-
-# نصب همه Skills
 npx skills add forough-ghasemzadeh/skills
-
-# نصب فقط یک Skill مشخص
-npx skills add forough-ghasemzadeh/skills --skill resignation
-npx skills add forough-ghasemzadeh/skills --skill private-joint-stock
-
-# نصب برای یک ابزار مشخص (مثلاً Claude Code)
-npx skills add forough-ghasemzadeh/skills -a claude-code
 ```
-
-`npx skills` در حال حاضر ابزارهایی مانند Claude Code، Cursor، Codex و OpenCode را پشتیبانی می‌کند. برای **ChatGPT** که هنوز به این CLI متصل نیست، محتوای فایل `SKILL.md` مربوطه (به‌همراه فایل‌های `references/`) را در Custom GPT Instructions یا Project Instructions کپی کنید.
 
 ## استفاده
 

@@ -1,5 +1,5 @@
 ---
-name: resignation
+name: limited-liability-resignation
 description: Analyzes and drafts manager and managing-director (مدیرعامل) resignations for Iranian limited liability companies (شرکت با مسئولیت محدود). Use when the user asks about استعفا، تغییر سمت، خروج مدیر، مدیرعامل، شریک، سهم‌الشرکه، استعفانامه، اظهارنامه، or resignation/removal of a manager or CEO from an Iranian LLC (شرکت با مسئولیت محدود). Separates resignation of managerial position from partnership/سهم‌الشرکه status and covers ثبت تغییرات registration requirements.
 license: MIT
 metadata:

@@ -1,5 +1,5 @@
 ---
-name: private-joint-stock
+name: private-joint-stock-resignation
 description: Analyzes and drafts board member, chairman, vice-chairman, and managing-director (مدیرعامل) resignations for Iranian private joint-stock companies (شرکت سهامی خاص). Use when the user asks about استعفا، تغییر سمت، خروج مدیر، هیأت‌مدیره، مدیرعامل، استعفانامه، اظهارنامه، or resignation/removal of a director, chairman, or CEO from an Iranian سهامی خاص company. Covers separating resignation of position from board membership, alternate-member (علی‌البدل) succession under Article 112, authorized signatories, and مرجع ثبت شرکت‌ها registration requirements.
 license: MIT
 metadata:
