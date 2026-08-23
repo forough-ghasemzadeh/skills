@@ -1,0 +1,18 @@
+{
+  "name": "ghasemzadeh-skills",
+  "owner": {
+    "name": "Forough Ghasemzadeh"
+  },
+  "description": "AI Skills for Iranian corporate law (director/manager resignation).",
+  "plugins": [
+    {
+      "name": "iranian-corporate-resignation",
+      "source": "./",
+      "description": "Legal-analysis and drafting skills for director/manager resignation from Iranian limited-liability and private joint-stock companies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Forough Ghasemzadeh"
+      }
+    }
+  ]
+}

@@ -58,6 +58,19 @@ ChatGPT هنوز امکان آپلود مستقیم فایل Skill را ندار
 npx skills add forough-ghasemzadeh/skills
 ```
 
+### روش ۴: به‌صورت Plugin در Claude Code
+
+این مخزن یک [Claude Code plugin marketplace](https://code.claude.com/docs/en/plugin-marketplaces) نیز هست و هر دو Skill را در یک پلاگین واحد (`iranian-corporate-resignation`) عرضه می‌کند. در Claude Code:
+
+```
+/plugin marketplace add forough-ghasemzadeh/skills
+/plugin install iranian-corporate-resignation@ghasemzadeh-skills
+```
+
+پس از نصب، در صورت نیاز `/reload-plugins` را اجرا کنید. Skillها به‌صورت `iranian-corporate-resignation:limited-liability-resignation` و `iranian-corporate-resignation:private-joint-stock-resignation` در دسترس‌اند و همچنان بر اساس محتوای گفتگو به‌صورت خودکار توسط مدل نیز فعال می‌شوند.
+
+> توجه: این روش برای **Claude Code** (ابزار خط‌فرمان) است. برنامهٔ Claude Desktop در حال حاضر مفهوم «Plugin» ندارد و Skills سفارشی را فقط به‌صورت فایل zip (روش ۱) می‌پذیرد.
+
 ## استفاده
 
 پس از نصب، Skill مناسب را در محیط AI خود فعال یا معرفی کنید و درخواست خود را به زبان طبیعی وارد کنید.

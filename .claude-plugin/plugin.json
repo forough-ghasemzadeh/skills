@@ -1,0 +1,13 @@
+{
+  "name": "iranian-corporate-resignation",
+  "description": "Legal-analysis and drafting skills for director/manager resignation from Iranian limited-liability and private joint-stock companies.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Forough Ghasemzadeh"
+  },
+  "license": "MIT",
+  "skills": [
+    "./companies/limited-liability/resignation",
+    "./companies/private-joint-stock/resignation"
+  ]
+}
