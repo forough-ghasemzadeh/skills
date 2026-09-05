@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/forough-ghasemzadeh/skills/compare/v0.1.1...v0.1.2) (2026-09-05)
+
+
+### Features
+
+* add real-estate-sale-contract ([d305877](https://github.com/forough-ghasemzadeh/skills/commit/d305877f9478534ad587883803f11805c12932e7))
+
 ## [0.1.1](https://github.com/forough-ghasemzadeh/skills/compare/v0.1.0...v0.1.1) (2026-09-05)
 
 
